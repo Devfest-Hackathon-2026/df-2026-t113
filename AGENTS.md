@@ -74,8 +74,9 @@ and appropriate for a small hackathon team.
 - Python dependencies belong in `backend/pyproject.toml`; frontend dependencies
   belong in `frontend/package.json`. Root manifests coordinate workspaces and
   shared tooling when configured.
-- Use uv for Python and npm with Node.js for the frontend. Do not introduce Bun,
-  Yarn, or pnpm lockfiles.
+- Use uv for Python and npm with Node.js for the frontend. Use `npm run` for
+  project scripts and `npm exec` for package executables. Do not use Bun, bunx,
+  Yarn, or pnpm commands, and do not introduce their lockfiles.
 - With the root npm workspace configured, install dependencies from the repository
   root. Use `npm install` when intentionally updating dependencies and commit the
   generated root `package-lock.json`; teammates and container builds use `npm ci`
