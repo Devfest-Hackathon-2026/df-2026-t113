@@ -74,8 +74,12 @@ and appropriate for a small hackathon team.
 - Python dependencies belong in `backend/pyproject.toml`; frontend dependencies
   belong in `frontend/package.json`. Root manifests coordinate workspaces and
   shared tooling when configured.
-- Use uv for Python. Use the frontend package manager selected by the repository;
-  do not switch between npm and Bun or maintain competing frontend lockfiles.
+- Use uv for Python and npm with Node.js for the frontend. Do not introduce Bun,
+  Yarn, or pnpm lockfiles.
+- With the root npm workspace configured, install dependencies from the repository
+  root. Use `npm install` when intentionally updating dependencies and commit the
+  generated root `package-lock.json`; teammates and container builds use `npm ci`
+  once that lockfile exists. Do not create placeholder lockfiles.
 - Update lockfiles through their package managers, never by hand.
 - Do not hand-edit generated API clients, generated route trees, or frontend build
   output. Change their source and regenerate them using the documented commands.
@@ -95,8 +99,9 @@ and appropriate for a small hackathon team.
   checks from `backend/`: `uv run black --check app tests` and
   `uv run flake8 app tests`.
 - Configure frontend scripts for formatting checks, linting, type checking, and
-  builds; run them using the chosen package manager. Do not assume those scripts
-  exist before checking `package.json`.
+  builds; run them using npm. Root scripts may delegate to the frontend using
+  `npm run <script> --workspace frontend`. Do not assume those scripts exist before
+  checking `package.json`.
 - Run relevant tests for changed behavior. Prioritize critical user flows,
   validation, authorization, and regressions rather than tests that mirror code.
 - Keep formatting changes scoped to the work. Do not disable checks merely to
@@ -106,6 +111,7 @@ and appropriate for a small hackathon team.
 
 ## Current setup status
 
-The initial manifests and Dockerfile are placeholders. These instructions describe
-the intended standards; they do not mean dependencies, scripts, or tool settings
-are already configured. Inspect the actual files before running setup commands.
+The repository contains a local React/TypeScript and FastAPI demo using npm and uv
+workspaces. The frontend build is served from `backend/app/frontend/`. See README.md
+for local development and verification commands. Document processing and Q&A use
+explicitly labeled fictional sample content; do not present them as real AI output.

@@ -1,3 +1,11 @@
 .env
+.env.*
+!.env.example
 .venv/
 node_modules/
+__pycache__/
+.pytest_cache/
+*.pyc
+backend/app/frontend/
+frontend/dist/
+.DS_Store
