@@ -1,0 +1,26 @@
+[
+  {
+    "id": "demo-route-1",
+    "destinationId": "demo-site-1",
+    "isDemo": true,
+    "verifiedAt": null,
+    "maxOriginDistanceMeters": 40,
+    "waypoints": [
+      {
+        "latitude": 35.68,
+        "longitude": 139.767,
+        "instruction": "Simulation only. Start at the demo marker."
+      },
+      {
+        "latitude": 35.6803,
+        "longitude": 139.767,
+        "instruction": "Simulation only. Turn right."
+      },
+      {
+        "latitude": 35.6806,
+        "longitude": 139.7676,
+        "instruction": "Simulation only. Demo arrival point."
+      }
+    ]
+  }
+]

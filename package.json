@@ -1,18 +1,29 @@
 {
-  "name": "devfest-2026",
+  "name": "contour",
   "private": true,
   "workspaces": [
-    "frontend"
+    "backend"
   ],
+  "engines": {
+    "node": ">=24 <25"
+  },
   "scripts": {
-    "dev": "npm run dev --workspace frontend",
-    "build": "npm run build --workspace frontend",
-    "lint": "npm run lint --workspace frontend",
-    "typecheck": "npm run typecheck --workspace frontend",
-    "format": "prettier --write frontend",
-    "format:check": "prettier --check frontend"
+    "dev": "npm run dev --workspace backend",
+    "build": "npm run build --workspace backend",
+    "start": "npm run start --workspace backend",
+    "test": "npm run test --workspace backend",
+    "typecheck": "npm run typecheck --workspace backend",
+    "lint": "eslint backend",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "devDependencies": {
-    "prettier": "^3.6.2"
-  }
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.14.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.14.0",
+    "prettier": "^3.6.2",
+    "typescript-eslint": "^8.72.1"
+  },
+  "type": "module"
 }

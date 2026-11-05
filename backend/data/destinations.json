@@ -1,0 +1,15 @@
+[
+  {
+    "id": "demo-site-1",
+    "name": "Fictional Demo Assembly Point",
+    "address": "Synthetic demonstration data; not an evacuation destination",
+    "latitude": 35.6806,
+    "longitude": 139.7676,
+    "disasters": ["earthquake"],
+    "kind": "emergencySite",
+    "source": "Fictional sample; replace with verified GSI data",
+    "verifiedAt": null,
+    "isDemo": true,
+    "openingStatus": "unknown"
+  }
+]

@@ -1,0 +1,6 @@
+# Copy to local.properties; never commit the real file.
+# Android Studio normally writes sdk.dir automatically.
+# sdk.dir=/absolute/path/to/Android/sdk
+EVACUATION_AR_API_BASE_URL=http://10.0.2.2:8080/
+# Use your HTTPS Cloud Run URL on a physical phone.
+# Configure restricted Android ARCore credentials when implementing AR.
